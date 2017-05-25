@@ -1,0 +1,9 @@
+c:\users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\bin\Debug\Compiler.exe.config
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.csprojResolveAssemblyReference.cache
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.Form1.resources
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.Properties.Resources.resources
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.csproj.GenerateResource.Cache
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\bin\Debug\Compiler.exe
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\bin\Debug\Compiler.pdb
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.exe
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.pdb
