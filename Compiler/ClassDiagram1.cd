@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Compiler.DelevopmentEnvironment" Collapsed="true">
+    <Position X="34.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAhAAiAAgAAAAACAAAACAAgAAAAAAAAABAABBAI=</HashCode>
+      <FileName>Development Environment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.ParserContext" Collapsed="true">
+    <Position X="36.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAACAEAAACAAAAAAAEBAAA=</HashCode>
+      <FileName>ParserContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.SymbolTable" Collapsed="true">
+    <Position X="38" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAIAAAMAAAAAAIAABAAAAEAAAAAAAAQQAAAAAAEA=</HashCode>
+      <FileName>SymbolTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.CodeGenVisitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAIAAAAIAQIAAABAAAAAEAAQAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Visitors\CodeGenVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Compiler.ContextVisitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAEAAQACAAAABEAAEAAACEAAAAgAAAAAAA=</HashCode>
+      <FileName>Visitors\ContextVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Compiler.Nodes.Assignment" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgQAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Assignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.AssignMethodCall" Collapsed="true">
+    <Position X="20.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAgAQAIAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\AssignMethodCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.ASTNode" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\ASTNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Compiler.Nodes.BooleanExpression" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAgAAAAAAAABAAAAAAAAAAAAAAAAgEAAAAEA=</HashCode>
+      <FileName>Nodes\ASTNodes\BooleanExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Commands" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Commands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.CommandsDeclaration" Collapsed="true">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\CommandsDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Declaration" Collapsed="true">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Declaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Declarations" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Declarations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.ElseIfStatement" Collapsed="true">
+    <Position X="15" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Nodes\ASTNodes\ElseIfStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.ElseStatement" Collapsed="true">
+    <Position X="17.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\ElseStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Expression" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.IfStatement" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Nodes\ASTNodes\IfStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.IfStatementExtend" Collapsed="true">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\IfStatementExtend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.MethodCall" Collapsed="true">
+    <Position X="23" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAQAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\MethodCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.MethodDeclaration" Collapsed="true">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAgAAAIAAAAAAAAAABAAAAgAAAAAAAIAAAAIAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\MethodDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.PrefabMethodCall" Collapsed="true">
+    <Position X="27.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\PrefabMethodCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.StartupStucture" Collapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\StartupStucture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Statement" Collapsed="true">
+    <Position X="18.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Statement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.WhileStatement" Collapsed="true">
+    <Position X="18.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Nodes\ASTNodes\WhileStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Write" Collapsed="true">
+    <Position X="25.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\ASTNodes\Write.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.CallingParameter" Collapsed="true">
+    <Position X="34.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Nodes\TemporaryNodes\CallingParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.DeclaringParameter" Collapsed="true">
+    <Position X="39.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Nodes\TemporaryNodes\DeclaringParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Prefix" Collapsed="true">
+    <Position X="38" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\TemporaryNodes\Prefix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.ReturnStatement" Collapsed="true">
+    <Position X="34.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAA=</HashCode>
+      <FileName>Nodes\TemporaryNodes\ReturnStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Nodes.Text" Collapsed="true">
+    <Position X="39.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Nodes\TemporaryNodes\Text.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Properties.Resources" Collapsed="true">
+    <Position X="39.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Compiler.Properties.Settings" Collapsed="true">
+    <Position X="36.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Compiler.IVisitable" Collapsed="true">
+    <Position X="34.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Visitors\IVisitable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Compiler.IVisitor" Collapsed="true">
+    <Position X="36.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Visitors\IVisitor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

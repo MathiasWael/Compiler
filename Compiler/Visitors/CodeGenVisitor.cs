@@ -196,7 +196,7 @@ namespace Compiler
 
                 _symbolTable.CloseScope(); ///////////TESTFIX
             }
-            obj.NextDeclarations?.Accept(this);
+            codeString += obj.NextDeclarations?.Accept(this);
             return codeString;
         }
 
