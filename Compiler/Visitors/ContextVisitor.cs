@@ -65,7 +65,7 @@ namespace Compiler
             {
                 if (obj.Expression != null)
                 {
-                    if (!ExpressionTypeCheck(GetType(obj.Identifier), GetType((string[])obj.Expression.Accept(this))))
+                    if (!ExpressionTypeCheck(GetType(obj.Identifier), GetType((string[]) obj.Expression.Accept(this))))
                         throw new Exception();
                 }
             }
@@ -166,12 +166,12 @@ namespace Compiler
             {
                 if (obj.Expression1 != null)
                 {
-                    if (!ExpressionTypeCheck(GetType(obj.Value1), GetType((string[])obj.Expression1.Accept(this))))
+                    if (!ExpressionTypeCheck(GetType(obj.Value1), GetType((string[]) obj.Expression1.Accept(this))))
                         throw new Exception();
                 }
                 if (obj.Expression2 != null)
                 {
-                    if (!ExpressionTypeCheck(GetType(obj.Value1), GetType((string[])obj.Expression2.Accept(this))))
+                    if (!ExpressionTypeCheck(GetType(obj.Value1), GetType((string[]) obj.Expression2.Accept(this))))
                         throw new Exception();
                 }
             }
@@ -277,7 +277,7 @@ namespace Compiler
             }
             if (obj.Expression1 != null)
             {
-                if (!ExpressionTypeCheck(GetType(obj.Value), GetType((string[])obj.Expression1.Accept(this))))
+                if (!ExpressionTypeCheck(GetType(obj.Value), GetType((string[]) obj.Expression1.Accept(this))))
                     throw new Exception();
             }
             return obj.Value;
@@ -372,7 +372,7 @@ namespace Compiler
                 {
                     if (
                         !ExpressionTypeCheck(GetType(obj.ReturnValue),
-                            GetType((string[])obj.ReturnExpression.Accept(this))))
+                            GetType((string[]) obj.ReturnExpression.Accept(this))))
                     {
                         throw new Exception();
                     }
@@ -400,8 +400,16 @@ namespace Compiler
             }
             if (value[0] == "Identifier")
             {
-                if (_symbolTable.Variables.Find(x => x.Name == value[1]) == null)
-                    throw new IdentifierNotFound(value[1]);
+                try
+                {
+                    if (_symbolTable.Variables.Find(x => x.Name == value[1]) == null)
+                        throw new IdentifierNotFound(value[1]);
+                }
+                catch (IdentifierNotFound)
+                {
+                    
+                }
+
                 if (value.Length > 2)
                     return _symbolTable.GetSymbol(value[1], value[2])?.Type;
                 return _symbolTable.GetSymbol(value[1], null).Type;
