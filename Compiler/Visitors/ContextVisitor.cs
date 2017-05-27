@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Compiler.Exceptions;
 using Compiler.Nodes;
 
 namespace Compiler
@@ -47,11 +48,14 @@ namespace Compiler
             if (PrefabCheck(GetType(obj.Identifier)) || PrefabCheck(GetType(obj.Value)))
             {
                 if (PrefabCheck(GetType(obj.Identifier)) && GetType(obj.Value) == "Prefab")
-                { }
+                {
+                }
                 else if (PrefabCheck(GetType(obj.Value)) && GetType(obj.Identifier) == "Prefab")
-                { }
+                {
+                }
                 else if (StandardTypeCheck(GetType(obj.Identifier), GetType(obj.Value)))
-                { }
+                {
+                }
                 else
                     throw new Exception();
                 if (obj.Expression != null)
@@ -92,7 +96,7 @@ namespace Compiler
                 {
                     if (_symbolTable.Methods.Find(x => x.Name == obj.Identifier2[1]).Parameters.Count == 0)
                     {
-                        if(obj.Parameters.Count != 0)
+                        if (obj.Parameters.Count != 0)
                             throw new Exception();
                     }
                     int i = 0;
@@ -103,7 +107,7 @@ namespace Compiler
                         i++;
                     }
                 }
-                else if (_symbolTable.GetSymbol(obj.Identifier1[0], obj.Identifier1[1]).Type == "Method")
+                else if (_symbolTable.GetSymbol(obj.Identifier1[1], obj.Identifier1[2]).Type == "Method")
                 {
                     if (StandardTypeCheck(method.Type, "void"))
                     {
@@ -155,7 +159,8 @@ namespace Compiler
                     return null;
                 }
             }
-            if (PrefabCheck(GetType(obj.Value1)) || PrefabCheck(GetType(obj.Value2)) || StandardTypeCheck(GetType(obj.Value1), "Prefab") || StandardTypeCheck(GetType(obj.Value2), "Prefab"))
+            if (PrefabCheck(GetType(obj.Value1)) || PrefabCheck(GetType(obj.Value2)) ||
+                StandardTypeCheck(GetType(obj.Value1), "Prefab") || StandardTypeCheck(GetType(obj.Value2), "Prefab"))
                 throw new Exception();
             if (ExpressionTypeCheck(GetType(obj.Value1), GetType(obj.Value2)))
             {
@@ -241,10 +246,12 @@ namespace Compiler
                     if (obj.Parameters.Count != 0)
                         throw new Exception();
                 }
-                else if(obj.Parameters.Count == 0)
+                else if (obj.Parameters.Count == 0)
                     throw new Exception();
                 int i = 0;
-                foreach (SymbolTable.Variable parameter in _symbolTable.Methods.Find(x => x.Name == obj.Identifier[1]).Parameters)
+                foreach (
+                    SymbolTable.Variable parameter in
+                    _symbolTable.Methods.Find(x => x.Name == obj.Identifier[1]).Parameters)
                 {
                     if (!ParameterCheck(callingTypes[i], parameter.Type))
                         throw new Exception();
@@ -259,9 +266,9 @@ namespace Compiler
 
         public object Visit(Expression obj)
         {
-            if(GetType(obj.Value).ToLower() == "boolean")
+            if (GetType(obj.Value).ToLower() == "boolean")
                 throw new Exception();
-            if(obj.Operator != "+" && GetType(obj.Value).ToLower() == "string")
+            if (obj.Operator != "+" && GetType(obj.Value).ToLower() == "string")
                 throw new Exception();
             foreach (string prefabIdentifiersKey in _symbolTable.PrefabIdentifiers.Keys)
             {
@@ -363,7 +370,9 @@ namespace Compiler
                 }
                 if (obj.ReturnExpression != null)
                 {
-                    if (!ExpressionTypeCheck(GetType(obj.ReturnValue), GetType((string[])obj.ReturnExpression.Accept(this))))
+                    if (
+                        !ExpressionTypeCheck(GetType(obj.ReturnValue),
+                            GetType((string[])obj.ReturnExpression.Accept(this))))
                     {
                         throw new Exception();
                     }
@@ -392,7 +401,7 @@ namespace Compiler
             if (value[0] == "Identifier")
             {
                 if (_symbolTable.Variables.Find(x => x.Name == value[1]) == null)
-                    throw new Exception();
+                    throw new IdentifierNotFound(value[1]);
                 if (value.Length > 2)
                     return _symbolTable.GetSymbol(value[1], value[2])?.Type;
                 return _symbolTable.GetSymbol(value[1], null).Type;

@@ -64,7 +64,6 @@ namespace Compiler
                         return true;
 
                     case ParseMessage.TokenRead:
-                        //=== Make sure that we store token string for needed tokens.
                         parser.TokenSyntaxNode = _parserContext.GetTokenText();
                         break;
 

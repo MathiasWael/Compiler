@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\IdentifierNotFound.cs" />
     <Compile Include="Visitors\CodeGenVisitor.cs" />
     <Compile Include="Visitors\ContextVisitor.cs" />
     <Compile Include="Visitors\IVisitable.cs" />
