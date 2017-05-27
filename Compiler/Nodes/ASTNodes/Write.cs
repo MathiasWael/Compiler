@@ -8,11 +8,11 @@ namespace Compiler.Nodes
 {
     public class Write : Statement
     {
-        public List<string[]> WriteContext = new List<string[]>();
+        public List<string[]> WriteContext { get; private set; }
 
         public Write()
         {
-            WriteContext = Text.TextContext;
+            WriteContext = new List<string[]>(Text.TextContext);
             Text.TextContext.Clear();
         }
 

@@ -116,7 +116,6 @@ namespace Compiler
                         new Variable ("Size", "Point"),
                         new Variable("Location", "Point"),
                         new Variable("Picture", "String"),
-                        new Variable("Speed", "Decimal"),
                         new Variable("Visible", "Boolean")
                     }
                 },
@@ -128,7 +127,6 @@ namespace Compiler
                         new Variable("Location", "Point"),
                         new Variable("Picture", "String"),
                         new Variable("Visible", "Boolean")
-                        // add trigger?, 
                     }
                 },
                 {
@@ -139,7 +137,6 @@ namespace Compiler
                         new Variable("Location", "Point"),
                         new Variable("Picture", "String"),
                         new Variable("Visible", "Boolean")
-                        // add trigger?, 
                     }
                 },
                 {
@@ -151,7 +148,6 @@ namespace Compiler
                         new Variable("DisplayText", "String"),
                         new Variable("Visible", "Boolean"),
                         new Variable("TextboxSize", "Point")
-                        // add textbox Size?
                     }
                 },
                 {
@@ -164,7 +160,6 @@ namespace Compiler
                         new Variable("OnEnter", "Method"),
                         new Variable("OnExit", "Method"),
                         new Variable("OnStay", "Method")
-                        // add Damage tick?
                     }
                 }
         };

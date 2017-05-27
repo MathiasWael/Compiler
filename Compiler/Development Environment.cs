@@ -7,14 +7,14 @@ using GoldParser;
 
 namespace Compiler
 {
-    public partial class Form1 : Form
+    public partial class DelevopmentEnvironment : Form
     {
         private Grammar _grammar;
         private StartupStucture _rootAstNode;
         private ParserContext _parserContext;
-        public static Form1 Formtest;
+        public static DelevopmentEnvironment Formtest;
 
-        public Form1()
+        public DelevopmentEnvironment()
         {
             InitializeComponent();
             using (Stream stream = File.OpenRead("EndeligeGrammar.cgt"))
@@ -28,7 +28,7 @@ namespace Compiler
         [STAThread]
         static void Main()
         {
-            Application.Run(new Form1());
+            Application.Run(new DelevopmentEnvironment());
         }
 
         private bool Parse()

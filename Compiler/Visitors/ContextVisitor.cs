@@ -65,7 +65,7 @@ namespace Compiler
                         throw new Exception();
                 }
             }
-            else if (_symbolTable.GetSymbol(obj.Identifier[1], obj.Identifier?[2]).Type == "Movement")
+            else if (_symbolTable.GetSymbol(obj.Identifier[1], obj.Identifier?[2])?.Type == "Movement")
             {
                 string key = obj.Value[1];
                 key = key.Substring(key.Length - (key.Length - 1));
@@ -259,6 +259,10 @@ namespace Compiler
 
         public object Visit(Expression obj)
         {
+            if(GetType(obj.Value).ToLower() == "boolean")
+                throw new Exception();
+            if(obj.Operator != "+" && GetType(obj.Value).ToLower() == "string")
+                throw new Exception();
             foreach (string prefabIdentifiersKey in _symbolTable.PrefabIdentifiers.Keys)
             {
                 if (StandardTypeCheck(prefabIdentifiersKey, GetType(obj.Value)))
@@ -390,7 +394,7 @@ namespace Compiler
                 if (_symbolTable.Variables.Find(x => x.Name == value[1]) == null)
                     throw new Exception();
                 if (value.Length > 2)
-                    return _symbolTable.GetSymbol(value[1], value[2]).Type;
+                    return _symbolTable.GetSymbol(value[1], value[2])?.Type;
                 return _symbolTable.GetSymbol(value[1], null).Type;
             }
             return value[0];

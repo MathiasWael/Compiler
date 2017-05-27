@@ -8,8 +8,8 @@ namespace Compiler.Nodes
 {
     public class PrefabMethodCall : Statement
     {
-        public string PrefabMethod;
-        public List<string[]> CallingParameters;
+        public string PrefabMethod { get; private set; }
+        public List<string[]> CallingParameters { get; private set; }
         public PrefabMethodCall(string v)
         {
             PrefabMethod = v;

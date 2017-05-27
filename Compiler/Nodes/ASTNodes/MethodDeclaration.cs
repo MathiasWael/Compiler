@@ -5,11 +5,11 @@ namespace Compiler.Nodes
     public class MethodDeclaration : Declarations
     {
         public Commands Commands { get; private set; }
-        public List<Declaration> Parameters;
-        public string MethodType;
-        public string[] MethodIdentifier;
-        public string[] ReturnValue;
-        public Expression ReturnExpression;
+        public List<Declaration> Parameters { get; private set; }
+        public string MethodType { get; private set; }
+        public string[] MethodIdentifier { get; private set; }
+        public string[] ReturnValue { get; private set; }
+        public Expression ReturnExpression { get; private set; }
 
         public MethodDeclaration(string v1, string v2, Commands commands, ReturnStatement returnStatement)
         {

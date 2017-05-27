@@ -8,8 +8,8 @@ namespace Compiler.Nodes
 {
     public class MethodCall : Statement
     {
-        public string[] Identifier;
-        public List<string[]> Parameters;
+        public string[] Identifier { get; private set; }
+        public List<string[]> Parameters { get; private set; }
         public MethodCall(string[] v1)
         {
             Identifier = v1;

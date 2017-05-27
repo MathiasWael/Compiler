@@ -2,8 +2,8 @@
 {
     public class Expression : ASTNode
     {
-        public string Operator;
-        public string[] Value;
+        public string Operator { get; private set; }
+        public string[] Value { get; private set; }
         public Expression Expression1 { get; private set; }
         public Expression(string v1, string[] v2, Expression expression)
         {

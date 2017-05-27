@@ -238,6 +238,7 @@ namespace Compiler
             }
             codeString += "}";
 
+            _symbolTable.OpenScope();
             // Start()
             codeString += "void Start(";
             /*            obj.DeclaringParameters?.Accept(this);*/      // Remove?
@@ -246,6 +247,7 @@ namespace Compiler
             _symbolTable.CloseScope();                  //TESTFIX
             codeString += "}";
 
+            _symbolTable.OpenScope();
             // Update()
             codeString += "void Update(";
             /*            obj.DeclaringParameters2?.Accept(this);*/     // REmove?!
@@ -266,7 +268,7 @@ namespace Compiler
             codeString = codeString.Replace(";", ";" + System.Environment.NewLine);
             codeString = codeString.Replace("{", System.Environment.NewLine + "{" + System.Environment.NewLine);
             codeString = codeString.Replace("}", "}" + System.Environment.NewLine);
-            Form1.Formtest.TestString = codeString;
+            DelevopmentEnvironment.Formtest.TestString = codeString;
             //////////////////////////////////////////////////////////////////////////// This block is only for test.
 
             // File Setup

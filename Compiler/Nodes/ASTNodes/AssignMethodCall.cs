@@ -8,9 +8,9 @@ namespace Compiler.Nodes
 {
     public class AssignMethodCall : Statement
     {
-        public string[] Identifier1;
-        public string[] Identifier2;
-        public List<string[]> Parameters = new List<string[]>();
+        public string[] Identifier1 { get; private set; }
+        public string[] Identifier2 { get; private set; }
+        public List<string[]> Parameters { get; private set; }
         public AssignMethodCall(string[] v1, string[] v2)
         {
             Identifier1 = v1;

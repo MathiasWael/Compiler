@@ -8,9 +8,9 @@ namespace Compiler.Nodes
 {
     public class ElseIfStatement : IfStatementExtend
     {
-        public BooleanExpression BooleanExpression;
-        public Commands Commands1;
-        public IfStatementExtend IfStatementExtend;
+        public BooleanExpression BooleanExpression { get; private set; }
+        public Commands Commands1 { get; private set; }
+        public IfStatementExtend IfStatementExtend { get; private set; }
 
         public ElseIfStatement(BooleanExpression booleanExpression, Commands commands, IfStatementExtend ifStatementExtend)
         {

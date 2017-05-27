@@ -8,8 +8,8 @@ namespace Compiler.Nodes
 {
     public class CommandsDeclaration : Commands
     {
-        public string Type;
-        public string Identifier;
+        public string Type { get; private set; }
+        public string Identifier { get; private set; }
         public CommandsDeclaration(Declaration declaration, Commands commands)
         {
             Type = declaration.Type;

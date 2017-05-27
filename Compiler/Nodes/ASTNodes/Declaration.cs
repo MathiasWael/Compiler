@@ -2,8 +2,8 @@
 {
     public class Declaration : Declarations
     {
-        public string Type;
-        public string Identifier;
+        public string Type { get; private set; }
+        public string Identifier { get; private set; }
 
         public Declaration(string v1, string v2)
         {

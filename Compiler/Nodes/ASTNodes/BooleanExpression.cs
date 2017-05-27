@@ -2,13 +2,13 @@
 {
     public class BooleanExpression : ASTNode
     {
-        public string[] Value1;
-        public Expression Expression1;
-        public string ComparisonOperator1;
-        public string[] Value2;
-        public Expression Expression2;
-        public string LogicalOperator;
-        public BooleanExpression BooleanExtension;
+        public string[] Value1 { get; private set; }
+        public Expression Expression1 { get; private set; }
+        public string ComparisonOperator1 { get; private set; }
+        public string[] Value2 { get; private set; }
+        public Expression Expression2 { get; private set; }
+        public string LogicalOperator { get; private set; }
+        public BooleanExpression BooleanExtension { get; private set; }
 
         public BooleanExpression(string[] v1, Expression expression1, string v2, string[] v3, Expression expression2)
         {

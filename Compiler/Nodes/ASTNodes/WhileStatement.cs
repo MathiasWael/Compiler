@@ -8,8 +8,8 @@ namespace Compiler.Nodes
 {
     public class WhileStatement : Statement
     {
-        public BooleanExpression BooleanExpression;
-        public Commands Commands1;
+        public BooleanExpression BooleanExpression { get; private set; }
+        public Commands Commands1 { get; private set; }
         public WhileStatement(BooleanExpression booleanExpression, Commands commands)
         {
             BooleanExpression = booleanExpression;
