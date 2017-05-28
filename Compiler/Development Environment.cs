@@ -96,27 +96,18 @@ namespace Compiler
             ErrorDisplay.Items.Clear();
             if (Parse())
             {
-                bool exceptionFound = false;
                 try
                 {
                     _rootAstNode.Accept(new ContextVisitor());
-                }
-                catch (Exception)
-                {
-                    exceptionFound = true;
-                }
-                if (!exceptionFound)
-                {
                     ErrorDisplay.Items.Add("Type/scope check completed");
                     _rootAstNode.Accept(new CodeGenVisitor());
                     ErrorDisplay.Items.Add("CodeGen completed");
                 }
+                catch (Exception)
+                {
+
+                }
             }
-        }
-        public string TestString
-        {
-            get { return InputProgram.Text; }
-            set { InputProgram.Text = value; }
         }
     }
 }

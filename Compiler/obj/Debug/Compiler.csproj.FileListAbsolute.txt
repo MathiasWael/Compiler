@@ -7,3 +7,12 @@ C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Deb
 C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.pdb
 C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.DelevopmentEnvironment.resources
 C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.csprojResolveAssemblyReference.cache
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\bin\Debug\Compiler.exe.config
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\bin\Debug\Compiler.exe
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\bin\Debug\Compiler.pdb
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\obj\Debug\Compiler.csprojResolveAssemblyReference.cache
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\obj\Debug\Compiler.DelevopmentEnvironment.resources
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\obj\Debug\Compiler.Properties.Resources.resources
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\obj\Debug\Compiler.csproj.GenerateResource.Cache
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\obj\Debug\Compiler.exe
+C:\Users\kimx4560\Source\Repos\Compiler\Compiler\obj\Debug\Compiler.pdb

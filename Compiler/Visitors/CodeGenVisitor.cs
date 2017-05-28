@@ -51,11 +51,6 @@ namespace Compiler
             return codeString;
         }
 
-        public object Visit(ASTNode obj)
-        {
-            throw new NotImplementedException();
-        }
-
         public object Visit(BooleanExpression obj)
         {
             string codeString = "";
@@ -70,11 +65,6 @@ namespace Compiler
                 codeString += obj.BooleanExtension.Accept(this);
             }
             return codeString;
-        }
-
-        public object Visit(Commands obj)
-        {
-            throw new NotImplementedException();
         }
 
         public object Visit(CommandsDeclaration obj)
@@ -96,11 +86,6 @@ namespace Compiler
             }
             codeString += obj.NextDeclarations?.Accept(this);
             return codeString;
-        }
-
-        public object Visit(Declarations obj)
-        {
-            throw new NotImplementedException();
         }
 
         public object Visit(ElseIfStatement obj)
@@ -146,11 +131,6 @@ namespace Compiler
             return codeString;
         }
 
-        public object Visit(IfStatementExtend obj)
-        {
-            throw new NotImplementedException();
-        }
-
         public object Visit(MethodCall obj)
         {
             string codeString = "";
@@ -194,7 +174,7 @@ namespace Compiler
                 }
                 codeString += "}";
 
-                _symbolTable.CloseScope(); ///////////TESTFIX
+                _symbolTable.CloseScope();
             }
             codeString += obj.NextDeclarations?.Accept(this);
             return codeString;
@@ -241,19 +221,17 @@ namespace Compiler
             _symbolTable.OpenScope();
             // Start()
             codeString += "void Start(";
-            /*            obj.DeclaringParameters?.Accept(this);*/      // Remove?
             codeString += ") {";
             codeString += obj.Commands?.Accept(this);
-            _symbolTable.CloseScope();                  //TESTFIX
+            _symbolTable.CloseScope();
             codeString += "}";
 
             _symbolTable.OpenScope();
             // Update()
             codeString += "void Update(";
-            /*            obj.DeclaringParameters2?.Accept(this);*/     // REmove?!
             codeString += ") {";
             codeString += obj.Commands2?.Accept(this);
-            _symbolTable.CloseScope();                  //TESTFIX
+            _symbolTable.CloseScope();
             codeString += "}";
 
             // Methods
@@ -263,13 +241,9 @@ namespace Compiler
 
             codeString += "}";
 
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // TODO: Add Better method to fix spaceing in cs file.
             codeString = codeString.Replace(";", ";" + System.Environment.NewLine);
             codeString = codeString.Replace("{", System.Environment.NewLine + "{" + System.Environment.NewLine);
             codeString = codeString.Replace("}", "}" + System.Environment.NewLine);
-            DelevopmentEnvironment.Formtest.TestString = codeString;
-            //////////////////////////////////////////////////////////////////////////// This block is only for test.
 
             // File Setup
             if (File.Exists("C:/BOOTL/BOOTLUnityProject/Assets/Resources/Scripts/CompiledScript.cs"))
@@ -280,11 +254,6 @@ namespace Compiler
             file.Close();
 
             return null;
-        }
-
-        public object Visit(Statement obj)
-        {
-            throw new NotImplementedException();
         }
 
         public object Visit(WhileStatement obj)
@@ -310,7 +279,7 @@ namespace Compiler
                 {
                     if (textStrings[0] == "Identifier")
                     {
-                        codeString += getValueText(textStrings);
+                        codeString += getValueText(textStrings) + ".ToString()";
                     }
                     else
                     {
@@ -322,7 +291,7 @@ namespace Compiler
                 {
                     if (textStrings[0] == "Identifier")
                     {
-                        codeString += " + " + getValueText(textStrings);
+                        codeString += " + " + getValueText(textStrings) + ".ToString()";
                     }
                     else
                     {

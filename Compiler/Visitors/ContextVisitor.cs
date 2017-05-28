@@ -15,11 +15,6 @@ namespace Compiler
         private bool _parameterAdd;
         private bool _preVisit = true;
 
-        public object Visit(ASTNode obj)
-        {
-            throw new NotImplementedException();
-        }
-
         public object Visit(StartupStucture obj)
         {
             obj.Declarations?.Accept(this);
@@ -181,11 +176,6 @@ namespace Compiler
             return null;
         }
 
-        public object Visit(Commands obj)
-        {
-            throw new NotImplementedException();
-        }
-
         public object Visit(Declaration obj)
         {
             if (_preVisit)
@@ -197,11 +187,6 @@ namespace Compiler
             }
             obj.NextDeclarations?.Accept(this);
             return null;
-        }
-
-        public object Visit(Declarations obj)
-        {
-            throw new NotImplementedException();
         }
 
         public object Visit(ElseIfStatement obj)
@@ -225,11 +210,6 @@ namespace Compiler
             obj.IfStatementExtend?.Accept(this);
             obj.NextCommands?.Accept(this);
             return null;
-        }
-
-        public object Visit(IfStatementExtend obj)
-        {
-            throw new NotImplementedException();
         }
 
         public object Visit(MethodCall obj)
@@ -383,11 +363,6 @@ namespace Compiler
             }
             obj.NextDeclarations?.Accept(this);
             return null;
-        }
-
-        public object Visit(Statement obj)
-        {
-            throw new NotImplementedException();
         }
 
         #region AssistingMethods
