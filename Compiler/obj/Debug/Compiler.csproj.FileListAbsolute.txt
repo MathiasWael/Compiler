@@ -6,3 +6,4 @@ C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\bin\Deb
 C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.exe
 C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.pdb
 C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.DelevopmentEnvironment.resources
+C:\Users\mathias\documents\visual studio 2015\Projects\Compiler\Compiler\obj\Debug\Compiler.csprojResolveAssemblyReference.cache

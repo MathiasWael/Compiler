@@ -86,7 +86,7 @@ namespace Compiler
             }
         }
 
-        private void Log(string text)
+        public void Log(string text)
         {
             ErrorDisplay.Items.Add(text);
         }
@@ -96,11 +96,21 @@ namespace Compiler
             ErrorDisplay.Items.Clear();
             if (Parse())
             {
-                _rootAstNode.Accept(new ContextVisitor());
-                ErrorDisplay.Items.Add("Type/scope check completed");
-
-                _rootAstNode.Accept(new CodeGenVisitor());
-                ErrorDisplay.Items.Add("CodeGen completed");
+                bool exceptionFound = false;
+                try
+                {
+                    _rootAstNode.Accept(new ContextVisitor());
+                }
+                catch (Exception)
+                {
+                    exceptionFound = true;
+                }
+                if (!exceptionFound)
+                {
+                    ErrorDisplay.Items.Add("Type/scope check completed");
+                    _rootAstNode.Accept(new CodeGenVisitor());
+                    ErrorDisplay.Items.Add("CodeGen completed");
+                }
             }
         }
         public string TestString

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Compiler.Exceptions;
 
 namespace Compiler
 {
@@ -64,7 +65,7 @@ namespace Compiler
         {
             Variable variable1 = new Variable(name, type);
             if(Variables.Find(x => x.Name == name) != null)
-                throw new Exception();
+                throw new IdentifierAlreadyExists(name);
             if (_inMethodScope)
                 _methodScope.Add(variable1);
             else

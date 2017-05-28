@@ -11,7 +11,7 @@ namespace Compiler.Exceptions
     {
         public IdentifierNotFound(string identifier)
         {
-            DelevopmentEnvironment.Formtest.TestString = "The variable: " + identifier + " was not found.";
+            DelevopmentEnvironment.Formtest.Log("The variable: " + identifier + " was not found.");
         }
     }
 }
