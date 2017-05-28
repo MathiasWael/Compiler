@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Compiler.Exceptions;
 using Compiler.Nodes;
 using GoldParser;
 
@@ -103,7 +104,11 @@ namespace Compiler
                     _rootAstNode.Accept(new CodeGenVisitor());
                     ErrorDisplay.Items.Add("CodeGen completed");
                 }
-                catch (Exception)
+                catch (Exception ex) when (ex is IdentifierNotFound || 
+                                            ex is IdentifierAlreadyExists || 
+                                            ex is NotCompatibleTypes || 
+                                            ex is NotUsableWithOperator || 
+                                            ex is ParameterDifference)
                 {
 
                 }

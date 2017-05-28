@@ -279,9 +279,9 @@ namespace Compiler
             {
                 if (strings[0] != "StringValue")
                 {
-                    if (_symbolTable.GetSymbol(strings[0], strings[1]) == null)
+                    if (_symbolTable.GetSymbol(strings[1], strings[2]) == null)
                     {
-                        throw new IdentifierNotFound(strings[0]);
+                        throw new IdentifierNotFound(strings[1]);
                     }
                 }
             }

@@ -12,6 +12,7 @@ namespace Compiler.Nodes
 
         public Write()
         {
+            Text.TextContext.Reverse();
             WriteContext = new List<string[]>(Text.TextContext);
             Text.TextContext.Clear();
         }
