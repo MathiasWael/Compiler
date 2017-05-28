@@ -245,15 +245,7 @@ namespace Compiler
             codeString = codeString.Replace("{", System.Environment.NewLine + "{" + System.Environment.NewLine);
             codeString = codeString.Replace("}", "}" + System.Environment.NewLine);
 
-            // File Setup
-            if (File.Exists("C:/BOOTL/BOOTLUnityProject/Assets/Resources/Scripts/CompiledScript.cs"))
-                File.WriteAllText("C:/BOOTL/BOOTLUnityProject/Assets/Resources/Scripts/CompiledScript.cs", String.Empty);
-
-            StreamWriter file = new StreamWriter("C:/BOOTL/BOOTLUnityProject/Assets/Resources/Scripts/CompiledScript.cs", true);
-            file.Write(codeString);
-            file.Close();
-
-            return null;
+            return codeString;
         }
 
         public object Visit(WhileStatement obj)

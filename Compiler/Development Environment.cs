@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -101,8 +102,26 @@ namespace Compiler
                 {
                     _rootAstNode.Accept(new ContextVisitor());
                     ErrorDisplay.Items.Add("Type/scope check completed");
-                    _rootAstNode.Accept(new CodeGenVisitor());
+                    string codeString = (string)_rootAstNode.Accept(new CodeGenVisitor());
+
+                    System.Windows.Forms.MessageBox.Show("Select The UnityProject Folder.");
+
+                    using (var fbd = new FolderBrowserDialog())
+                    {
+                        fbd.ShowDialog();
+                        projectpath = fbd.SelectedPath;
+                    }
+
+                    // File Setup
+                    if (File.Exists(projectpath + "\\Assets\\Resources\\Scripts\\CompiledScript.cs"))
+                        File.WriteAllText(projectpath + "\\Assets\\Resources\\Scripts\\CompiledScript.cs", String.Empty);
+
+                    StreamWriter file = new StreamWriter(projectpath + "\\Assets\\Resources\\Scripts\\CompiledScript.cs", true);
+                    file.Write(codeString);
+                    file.Close();
+
                     ErrorDisplay.Items.Add("CodeGen completed");
+                    BuildButton.Enabled = true;
                 }
                 catch (Exception ex) when (ex is IdentifierNotFound || 
                                             ex is IdentifierAlreadyExists || 
@@ -113,6 +132,43 @@ namespace Compiler
 
                 }
             }
+        }
+
+        static string path;
+        static string projectpath;
+
+        private void BuildButton_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Select Unity Installation Folder");
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+                path = fbd.SelectedPath;
+            }
+
+            string cmdCommand = "\"" + path + "\\Editor\\Unity.exe" + "\" -batchmode -quit -projectPath \"" +
+                                projectpath + "\" -executeMethod EditorScript.PerformBuild";
+
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = false;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(cmdCommand);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+
+            System.Windows.Forms.MessageBox.Show("Build Finish");
+        }
+
+        private void InputProgram_TextChanged(object sender, EventArgs e)
+        {
+            BuildButton.Enabled = false;
         }
     }
 }
